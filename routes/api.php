@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\StudyController;
 use App\Http\Middleware\checkAuth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -20,3 +21,7 @@ Route::post('me', [AuthController::class, 'me'])->middleware('auth:api');
 Route::post('login', [AuthController::class, 'login']);
 Route::get('autherror', [AuthController::class, 'autherror'])->name('login');
 Route::post('register', [AuthController::class, 'register']);
+
+
+Route::post('submitform', [StudyController::class, 'store']);
+Route::post('amesubmitform', [StudyController::class, 'amestore']);
